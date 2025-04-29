@@ -2,9 +2,9 @@ import mongoose from "mongoose";
 
 const aiInsightsSchema = new mongoose.Schema({
   summary: String,
-  explanation: String,
-  commonMistakes: String,
-  optimization: String,
+  explanation: [String],
+  commonMistakes: [String],
+  optimization: [String],
 }, { _id: false });
 
 const codeSchema = new mongoose.Schema({
@@ -18,7 +18,7 @@ const codeSchema = new mongoose.Schema({
   },
   language: {
     type: String,
-    default: "javascript",
+    default: "c++",
   },
   topicTags: {
     type: [String],
